@@ -17,6 +17,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      sha256: bcc61735345c9ab5cb81073896579e735f81e35fd588907a393143ea986be8ff
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.1.1"
   characters:
     dependency: transitive
     description:
@@ -123,6 +131,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.15.0"
+  mix:
+    dependency: "direct main"
+    description:
+      name: mix
+      sha256: f4c5a73f7470f9a85d3aa46dbff434be6f1c172bec35aa052c2ca4dc77845cff
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.6.0"
+  mix_annotations:
+    dependency: transitive
+    description:
+      name: mix_annotations
+      sha256: "38dda27588ab87a8634bed8c8b09a7325380baa8eaeffe39fcb7ea2b227fa496"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.4.0"
   path:
     dependency: transitive
     description:
@@ -202,4 +226,4 @@ packages:
     version: "14.3.0"
 sdks:
   dart: ">=3.6.0 <4.0.0"
-  flutter: ">=3.18.0-18.0.pre.54"
+  flutter: ">=3.27.0"

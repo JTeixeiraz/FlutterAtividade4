@@ -1,18 +1,22 @@
 
 import 'package:atvd42/styles/cardStyle.dart';
-import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
+import 'package:flutter/material.dart';
 
 import 'VeiculoWidget.dart';
 
-class CarroWidget extends VeiculoWidget {
+class Motowidget extends VeiculoWidget {
 
   final int numAssentos;
   final int numPortas;
-  const CarroWidget({
+  final double cilindradas;
+
+
+  const Motowidget({
     Key? key,
     required this.numAssentos,
     required this.numPortas,
+    required this.cilindradas,
     required  nome,
     required preco,
     required desc,
@@ -25,10 +29,10 @@ class CarroWidget extends VeiculoWidget {
     return GestureDetector(
       onTap: onTap,
       child: Box(
-        style: styleContainer,
-        child: Column(
+        style:styleContainer,
+        child: Row(
           children: <Widget>[
-            Image.network(imagemURl, height: 50,),
+            Image.network(imagemURl),
             Column(
               children: [
                 Text(nome),

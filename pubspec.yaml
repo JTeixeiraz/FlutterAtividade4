@@ -1,4 +1,4 @@
-name: flutteratvd4
+name: atvd42
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0
@@ -7,8 +7,10 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
+  carousel_slider: ^5.1.1
   flutter:
     sdk: flutter
+  mix: ^1.6.0
 
 dev_dependencies:
   flutter_test:
