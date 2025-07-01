@@ -11,6 +11,26 @@ class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
 
+
+/*
+  TODO: Input + Tela para inserir/calcular o valor de entrada e numero de parcelas;
+        Adicionar função de calculo na classe veiculo (classe abstrata)
+
+        Fazer o front
+
+        ===========================================================================
+        firebase integration
+
+        firebase auth para admin and user
+
+        admin: Adiciona ofertas e edita
+        user: apenas pode comprar
+
+        configurar o firebase para funcionar e listar todos os produtos/veiculos
+  
+  */
+
+  
               // children: <Widget>[
               //   Caminhaowidget(numAssentos: 3, numPortas: 2, capacidadeDeCarga: 300, nome: "aaa", preco: 33.3, desc: "ssos", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
               //   CarroWidget(numAssentos: 4, numPortas: 4, nome: "carrito", preco: 345.00, desc: "desc foda", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
