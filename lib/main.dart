@@ -25,9 +25,17 @@ class MainApp extends StatelessWidget {
               children: [
                 CarouselSlider(items:[
                   Caminhaowidget(numAssentos: 3, numPortas: 3, capacidadeDeCarga: 4444, nome: "nome", preco: 455, desc: "fdgdfgd", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
-                  CarroWidget(numAssentos: 44, numPortas: 55, nome: "nome", preco: 5434, desc: "desc", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{})
+                  Caminhaowidget(numAssentos: 3, numPortas: 3, capacidadeDeCarga: 4444, nome: "nome", preco: 455, desc: "fdgdfgd", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
+                  Caminhaowidget(numAssentos: 3, numPortas: 3, capacidadeDeCarga: 4444, nome: "nome", preco: 455, desc: "fdgdfgd", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
                 ]
-                , options: CarouselOptions(height: 400))
+                , options: CarouselOptions(height: 400, 
+                autoPlay: false,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.3,
+                viewportFraction: 0.6,
+                enableInfiniteScroll: false,
+                padEnds: true,
+                initialPage: 0,))
               ],
             )
           )
