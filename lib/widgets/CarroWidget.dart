@@ -1,4 +1,3 @@
-
 import 'package:atvd42/styles/cardStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:mix/mix.dart';
