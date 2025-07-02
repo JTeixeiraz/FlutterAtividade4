@@ -1,68 +1,201 @@
 import 'package:atvd42/widgets/CaminhaoWidget.dart';
-import 'package:atvd42/widgets/inputWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+void main() => runApp(const MainApp());
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
-
-
-/*
-  TODO: Input + Tela para inserir/calcular o valor de entrada e numero de parcelas;
-        Adicionar função de calculo na classe veiculo (classe abstrata)
-
-        Fazer o front
-
-        ===========================================================================
-        firebase integration
-
-        firebase auth para admin and user
-
-        admin: Adiciona ofertas e edita
-        user: apenas pode comprar
-
-        configurar o firebase para funcionar e listar todos os produtos/veiculos
-
-  */
-
-
-              // children: <Widget>[
-              //   Caminhaowidget(numAssentos: 3, numPortas: 2, capacidadeDeCarga: 300, nome: "aaa", preco: 33.3, desc: "ssos", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
-              //   CarroWidget(numAssentos: 4, numPortas: 4, nome: "carrito", preco: 345.00, desc: "desc foda", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
-              // ],
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Container(
-            child: Column(
-              children: [
-                CarouselSlider(items:[
-                  Caminhaowidget(numAssentos: 3, numPortas: 3, capacidadeDeCarga: 4444, nome: "nome", preco: 455, desc: "fdgdfgd", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
-                  Caminhaowidget(numAssentos: 3, numPortas: 3, capacidadeDeCarga: 4444, nome: "nome", preco: 455, desc: "fdgdfgd", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
-                  Caminhaowidget(numAssentos: 3, numPortas: 3, capacidadeDeCarga: 4444, nome: "nome", preco: 455, desc: "fdgdfgd", imagemURl: "https://media.istockphoto.com/id/1443562748/pt/foto/cute-ginger-cat.jpg?s=612x612&w=0&k=20&c=OqlMF3bysUX6cVux5kKc1gqCGMghQpGc5ukyw1qG82s=", onTap: ()=>{}),
-                ],
-                    options: CarouselOptions(height: 400, 
-                    autoPlay: false,
-                    enlargeCenterPage: true,
-                    enlargeFactor: 0.3,
-                    viewportFraction: 0.6,
-                    enableInfiniteScroll: false,
-                    padEnds: true,
-                    initialPage: 0,
-                  )
+        body: Stack(
+          children: [
+
+            Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.purple, Colors.orange],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
-              ],
-            )
-          )
-          )
-        )
-      );
+              ),
+            ),
+
+
+            SafeArea(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 200),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      padding: const EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30.0),
+                            child: CarouselSlider(
+                              items: [
+                                Caminhaowidget(
+                                  numAssentos: 3,
+                                  numPortas: 3,
+                                  capacidadeDeCarga: 4444,
+                                  nome: "Caminhão A",
+                                  preco: 455,
+                                  desc: "Modelo robusto para carga pesada.",
+                                  imagemURl:
+                                      "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                  onTap: () {},
+                                ),
+                                Caminhaowidget(
+                                  numAssentos: 3,
+                                  numPortas: 3,
+                                  capacidadeDeCarga: 5000,
+                                  nome: "Caminhão B",
+                                  preco: 600,
+                                  desc: "Ideal para longas distâncias.",
+                                  imagemURl:
+                                      "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                  onTap: () {},
+                                ),
+                                Caminhaowidget(
+                                  numAssentos: 2,
+                                  numPortas: 2,
+                                  capacidadeDeCarga: 3000,
+                                  nome: "Caminhão C",
+                                  preco: 520,
+                                  desc: "Compacto e econômico.",
+                                  imagemURl:
+                                      "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                  onTap: () {},
+                                ),
+                              ],
+                              options: CarouselOptions(
+                                height: 300,
+                                enlargeCenterPage: true,
+                                enlargeFactor: 0.3,
+                                viewportFraction: 0.7,
+                                enableInfiniteScroll: false,
+                                padEnds: true,
+                              ),
+                            ),
+                          ),
+
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30.0),
+                            child: CarouselSlider(
+                              items: [
+                                Caminhaowidget(
+                                  numAssentos: 3,
+                                  numPortas: 3,
+                                  capacidadeDeCarga: 4444,
+                                  nome: "Caminhão A",
+                                  preco: 455,
+                                  desc: "Modelo robusto para carga pesada.",
+                                  imagemURl:
+                                      "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                  onTap: () {},
+                                ),
+                                Caminhaowidget(
+                                  numAssentos: 3,
+                                  numPortas: 3,
+                                  capacidadeDeCarga: 5000,
+                                  nome: "Caminhão B",
+                                  preco: 600,
+                                  desc: "Ideal para longas distâncias.",
+                                  imagemURl:
+                                      "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                  onTap: () {},
+                                ),
+                                Caminhaowidget(
+                                  numAssentos: 2,
+                                  numPortas: 2,
+                                  capacidadeDeCarga: 3000,
+                                  nome: "Caminhão C",
+                                  preco: 520,
+                                  desc: "Compacto e econômico.",
+                                  imagemURl:
+                                      "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                  onTap: () {},
+                                ),
+                              ],
+                              options: CarouselOptions(
+                                height: 300,
+                                enlargeCenterPage: true,
+                                enlargeFactor: 0.3,
+                                viewportFraction: 0.7,
+                                enableInfiniteScroll: false,
+                                padEnds: true,
+                              ),
+                            ),
+                          ),
+
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30.0, bottom: 20.0),
+                            child: CarouselSlider(
+                              items: [
+                                Caminhaowidget(
+                                  numAssentos: 3,
+                                  numPortas: 3,
+                                  capacidadeDeCarga: 4444,
+                                  nome: "Caminhão A",
+                                  preco: 455,
+                                  desc: "Modelo robusto para carga pesada.",
+                                  imagemURl:
+                                      "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                  onTap: () {},
+                                ),
+                                Caminhaowidget(
+                                  numAssentos: 3,
+                                  numPortas: 3,
+                                  capacidadeDeCarga: 5000,
+                                  nome: "Caminhão B",
+                                  preco: 600,
+                                  desc: "Ideal para longas distâncias.",
+                                  imagemURl:
+                                      "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                  onTap: () {},
+                                ),
+                                Caminhaowidget(
+                                  numAssentos: 2,
+                                  numPortas: 2,
+                                  capacidadeDeCarga: 3000,
+                                  nome: "Caminhão C",
+                                  preco: 520,
+                                  desc: "Compacto e econômico.",
+                                  imagemURl:
+                                      "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                  onTap: () {},
+                                ),
+                              ],
+                              options: CarouselOptions(
+                                height: 300,
+                                enlargeCenterPage: true,
+                                enlargeFactor: 0.3,
+                                viewportFraction: 0.7,
+                                enableInfiniteScroll: false,
+                                padEnds: true,
+                              ),
+                            ),
+                          ),
+                        ]
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
