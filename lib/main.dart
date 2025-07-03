@@ -1,7 +1,7 @@
 import 'package:atvd42/widgets/CaminhaoWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
+import 'package:atvd42/screens/CalulatorScreen.dart';
 void main() => runApp(const MainApp());
 
 class MainApp extends StatelessWidget {
@@ -10,7 +10,17 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      home: myApp()
+    );
+  }
+}
+
+class myApp extends StatelessWidget {
+  const myApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         body: Stack(
           children: [
 
@@ -27,10 +37,9 @@ class MainApp extends StatelessWidget {
 
             SafeArea(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(vertical: 20),
+                padding: const EdgeInsets.only(top: 200),
                 child: Column(
                   children: [
-                    const SizedBox(height: 200),
                     Container(
                       width: MediaQuery.of(context).size.width,
                       padding: const EdgeInsets.all(16.0),
@@ -70,12 +79,17 @@ class MainApp extends StatelessWidget {
                                   numAssentos: 2,
                                   numPortas: 2,
                                   capacidadeDeCarga: 3000,
-                                  nome: "Caminhão C",
+                                  nome: "Caminhão Esoecuak",
                                   preco: 520,
                                   desc: "Compacto e econômico.",
                                   imagemURl:
                                       "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(context, 
+                                    MaterialPageRoute(builder: (context)=>
+                                      CalulatorScreen()
+                                    ));
+                                  },
                                 ),
                               ],
                               options: CarouselOptions(
@@ -195,7 +209,6 @@ class MainApp extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
