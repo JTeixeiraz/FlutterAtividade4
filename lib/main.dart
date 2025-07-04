@@ -34,8 +34,6 @@ class myApp extends StatelessWidget {
                 ),
               ),
             ),
-
-
             SafeArea(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.only(top: 200),
@@ -86,10 +84,18 @@ class myApp extends StatelessWidget {
                                   imagemURl:
                                       "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
                                   onTap: () {
-                                    Navigator.push(context, 
+                                    Navigator.push(context,
                                     MaterialPageRoute(builder: (context)=>
-                                      CalulatorScreen(veiculoSelecinado: Caminhaowidget(numAssentos: 3, numPortas: 3, capacidadeDeCarga: 333, nome: "nome", preco: 33, desc: "desc", imagemURl:  "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg", onTap: (){
-                                      }),)
+                                      CalulatorScreen(
+                                        veiculoSelecinado: Caminhaowidget(
+                                          numAssentos: 3,
+                                          numPortas: 3,
+                                          capacidadeDeCarga: 333,
+                                          nome: "Caminhao",
+                                          preco: 50000,
+                                          desc: "desc",
+                                          imagemURl:  "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg",
+                                          onTap: (){}),)
                                     ));
                                   },
                                 ),
