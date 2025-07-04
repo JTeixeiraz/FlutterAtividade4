@@ -1,4 +1,5 @@
 import 'package:atvd42/widgets/CaminhaoWidget.dart';
+import 'package:atvd42/widgets/VeiculoWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:atvd42/screens/CalulatorScreen.dart';
@@ -87,7 +88,8 @@ class myApp extends StatelessWidget {
                                   onTap: () {
                                     Navigator.push(context, 
                                     MaterialPageRoute(builder: (context)=>
-                                      CalulatorScreen()
+                                      CalulatorScreen(veiculoSelecinado: Caminhaowidget(numAssentos: 3, numPortas: 3, capacidadeDeCarga: 333, nome: "nome", preco: 33, desc: "desc", imagemURl:  "https://www.totvs.com/wp-content/uploads/2024/01/caminhao-truck.jpg", onTap: (){
+                                      }),)
                                     ));
                                   },
                                 ),
