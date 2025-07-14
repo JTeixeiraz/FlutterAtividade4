@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-/**
- *
- *
- *          Testando um input para poder conferir como é sua funcionalidade no codigo pratico
- *
- *///
+///
+///
+///          Testando um input para poder conferir como é sua funcionalidade no codigo pratico
+///
+///
 class MyInputWidget extends StatefulWidget {
+  const MyInputWidget({super.key});
+
   @override
-  _MyWidgetState createState() => _MyWidgetState();
+  State<MyInputWidget> createState() => _MyWidgetState();
 }
 
 class _MyWidgetState extends State<MyInputWidget> {
@@ -19,19 +20,19 @@ class _MyWidgetState extends State<MyInputWidget> {
       children: [
         TextField(
           controller: _controller,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             labelText: 'Digite algo',
             border: OutlineInputBorder(),
           ),
           onChanged: (value) {
-            print('Valor digitado: $value');
+            
           },
         ),
         ElevatedButton(
           onPressed: () {
-            print('Valor do controller: ${_controller.text}');
+            
           },
-          child: Text('Obter Valor'),
+          child: const Text('Obter Valor'),
         ),
       ],
     );

@@ -8,13 +8,12 @@ abstract class VeiculoWidget extends StatelessWidget {
   final VoidCallback onTap;
 
   const VeiculoWidget({
-    Key? key,
+    super.key,
     required this.nome,
     required this.preco,
     required this.desc,
     required this.imagemURl,
-    required this.onTap})
-  : super(key: key);
+    required this.onTap});
 
 
 }

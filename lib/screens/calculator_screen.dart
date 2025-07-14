@@ -1,17 +1,17 @@
 import 'dart:math';
 
-import 'package:atvd42/widgets/VeiculoWidget.dart';
+import 'package:atvd42/widgets/veiculo_widget.dart';
 import 'package:flutter/material.dart';
 
-class CalulatorScreen extends StatefulWidget {
+class CalculatorScreen extends StatefulWidget {
     final VeiculoWidget veiculoSelecinado;
-    const CalulatorScreen({ Key? key, required this.veiculoSelecinado }) : super(key: key);
+    const CalculatorScreen({ super.key, required this.veiculoSelecinado });
 
   @override
-  _CalulatorScreenState createState() => _CalulatorScreenState();
+  State<CalculatorScreen> createState() => _CalculatorScreenState();
 }
 
-class _CalulatorScreenState extends State<CalulatorScreen> {
+class _CalculatorScreenState extends State<CalculatorScreen> {
   final _formkey = GlobalKey<FormState>();
   final _inputController = TextEditingController();
   final _input2Controller = TextEditingController();
