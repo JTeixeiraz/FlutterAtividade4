@@ -67,29 +67,65 @@ class MyApp extends StatelessWidget {
                     numPortas: 3,
                     capacidadeDeCarga: 4444,
                     nome: "Caminhão A",
-                    preco: 455,
+                    preco: 455000,
                     desc: "Modelo robusto para carga pesada.",
                     imagemURl:
                         "lib/images/caminhao.jpg",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CalculatorScreen(
+                                    veiculoSelecinado: CaminhaoWidget(
+                                        numAssentos: 3,
+                                        numPortas: 3,
+                                        capacidadeDeCarga: 4444,
+                                        nome: "Caminhão A",
+                                        preco: 455000,
+                                        desc: "Modelo robusto para carga pesada.",
+                                        imagemURl:
+                                            "lib/images/caminhao.jpg",
+                                        onTap: () {}),
+                                  )
+                                )
+                              );
+                    },
                   ),
                   CaminhaoWidget(
                     numAssentos: 3,
                     numPortas: 3,
                     capacidadeDeCarga: 5000,
                     nome: "Caminhão B",
-                    preco: 600,
+                    preco: 50000,
                     desc: "Ideal para longas distâncias.",
                     imagemURl:
                         "lib/images/caminhao2.jpg",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CalculatorScreen(
+                                    veiculoSelecinado: CaminhaoWidget(
+                                        numAssentos: 3,
+                                        numPortas: 3,
+                                        capacidadeDeCarga: 5000,
+                                        nome: "Caminhão B",
+                                        preco: 50000,
+                                        desc: "Ideal para longas distâncias.",
+                                        imagemURl:
+                                            "lib/images/caminhao2.jpg",
+                                        onTap: () {}),
+                                  )
+                                )
+                              );
+                    },
                   ),
                   CaminhaoWidget(
                     numAssentos: 2,
                     numPortas: 2,
                     capacidadeDeCarga: 3000,
                     nome: "Caminhão C",
-                    preco: 520,
+                    preco: 52000,
                     desc: "Compacto e econômico.",
                     imagemURl:
                         "lib/images/caminhao3.jpg",
@@ -99,16 +135,19 @@ class MyApp extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => CalculatorScreen(
                                     veiculoSelecinado: CaminhaoWidget(
-                                        numAssentos: 3,
-                                        numPortas: 3,
-                                        capacidadeDeCarga: 333,
-                                        nome: "Caminhao",
-                                        preco: 50000,
-                                        desc: "desc",
+                                        numAssentos: 2,
+                                        numPortas: 2,
+                                        capacidadeDeCarga: 3000,
+                                        nome: "Caminhão C",
+                                        preco: 52000,
+                                        desc: "Compacto e econômico.",
                                         imagemURl:
                                             "lib/images/caminhao3.jpg",
-                                        onTap: () {}),
-                                  )));
+                                        onTap: () {}
+                                      ),
+                                  )
+                                )
+                      );
                     },
                   ),
                 ],
