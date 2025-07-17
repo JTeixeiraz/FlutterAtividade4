@@ -37,7 +37,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   void _calculate(){
     if (_formkey.currentState!.validate()) {
       setState(() {
-       String numParcelas = _input2Controller.text;
+          String numParcelas = _input2Controller.text;
           String valorDeEntrada = _inputController.text;
           double valueParcelas = double.parse(numParcelas);
           double valueEntrada = double.parse(valorDeEntrada);

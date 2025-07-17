@@ -3,14 +3,10 @@ import 'package:flutter/material.dart';
 import 'veiculo_widget.dart';
 
 class MotoWidget extends VeiculoWidget {
-  final int numAssentos;
-  final int numPortas;
   final double cilindradas;
 
   const MotoWidget({
     super.key,
-    required this.numAssentos,
-    required this.numPortas,
     required this.cilindradas,
     required super.nome,
     required super.preco,

@@ -4,11 +4,13 @@ import 'veiculo_widget.dart';
 class CarroWidget extends VeiculoWidget {
   final int numAssentos;
   final int numPortas;
+  final int cavalos;
 
   const CarroWidget({
     super.key,
     required this.numAssentos,
     required this.numPortas,
+    required this.cavalos,
     required super.nome,
     required super.preco,
     required super.desc,
