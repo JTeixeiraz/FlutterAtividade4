@@ -370,6 +370,8 @@ class MyApp extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey,
         backgroundColor: Colors.white,
         items: const [
           BottomNavigationBarItem(
