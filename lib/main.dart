@@ -6,13 +6,20 @@ import 'package:atvd42/widgets/carro_widget.dart';
 import 'package:atvd42/widgets/moto_widget.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:atvd42/firebase_options.dart';
+import 'package:provider/provider.dart';
+import 'package:atvd42/services/auth_services.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform
   );
-  runApp(const MainApp());
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context)=> AuthServices())
+    ],
+    child: MainApp(),)
+  );
 }
 
 class MainApp extends StatelessWidget {
