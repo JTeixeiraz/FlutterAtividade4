@@ -1,36 +1,30 @@
-import 'package:atvd42/screens/login_page.dart';
 import 'package:atvd42/main.dart';
-import 'package:atvd42/services/auth_services.dart';
+import 'package:atvd42/screens/login_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-class AuthCheck extends StatefulWidget {
-  const AuthCheck({ Key? key }) : super(key: key);
+class AuthCheck extends StatelessWidget {
+  const AuthCheck({Key? key}) : super(key: key);
 
-  @override
-  _AuthCheckState createState() => _AuthCheckState();
-}
-
-class _AuthCheckState extends State<AuthCheck> {
   @override
   Widget build(BuildContext context) {
-    AuthServices auth = Provider.of<AuthServices>(context);
-    if (auth.isLoading) {
-      return Loading();
-    }else{
-      if (auth.usuario == null) {
-        return LoginPage();
-      }else{
-        return MyApp();
-      }
-    }
-  }
-
-  Loading(){
-    return Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(),
-      ),
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const MaterialApp(
+            home: Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
+          );
+        } else if (snapshot.hasData) {
+          return const MainApp();
+        } else {
+          return const MaterialApp(home: LoginPage());
+        }
+      },
     );
   }
 }
