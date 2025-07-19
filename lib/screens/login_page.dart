@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:atvd42/services/auth_services.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -36,6 +38,24 @@ class _LoginPageState extends State<LoginPage> {
         toggleButton = "Voltar para o login.";
       }
     });
+  }
+
+  Login() async{
+    try {
+      await context.read<AuthServices>().Login(email.text, senha.text);
+    } on AuthException catch (e) {
+      ScaffoldMessenger.of(context)
+      .showSnackBar(SnackBar(content: Text(e.message)));
+    }
+  }
+
+  Registrar() async{
+    try {
+      await context.read<AuthServices>().registrar(email.text, senha.text);
+    } on AuthException catch (e) {
+      ScaffoldMessenger.of(context)
+      .showSnackBar(SnackBar(content: Text(e.message)));
+    }
   }
 
   @override
@@ -115,7 +135,11 @@ class _LoginPageState extends State<LoginPage> {
                     child: ElevatedButton.icon(
                       onPressed: () {
                         if (formKey.currentState!.validate()) {
-                          // ação de login/cadastro
+                          if (isLogin) {
+                            Login();
+                          }else{
+                            Registrar();
+                          }
                         }
                       },
                       icon: const Icon(Icons.check),
