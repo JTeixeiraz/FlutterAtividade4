@@ -1,3 +1,4 @@
+import 'package:atvd42/screens/login_page.dart';
 import 'package:atvd42/main.dart';
 import 'package:atvd42/services/auth_services.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,10 @@ class _AuthCheckState extends State<AuthCheck> {
   }
 
   Loading(){
-    
+    return Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
   }
 }

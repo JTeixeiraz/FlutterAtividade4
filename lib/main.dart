@@ -8,6 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:atvd42/firebase_options.dart';
 import 'package:provider/provider.dart';
 import 'package:atvd42/services/auth_services.dart';
+import 'package:atvd42/widgets/auth_check.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +19,7 @@ void main() async{
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (context)=> AuthServices())
     ],
-    child: MainApp(),)
+    child: AuthCheck(),)
   );
 }
 
