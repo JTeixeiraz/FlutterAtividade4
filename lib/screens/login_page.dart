@@ -97,6 +97,22 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                   ),
                   const SizedBox(height: 24),
+                  if (!isLogin)
+                    TextFormField(
+                      controller: nome,
+                      decoration: InputDecoration(
+                        labelText: "Nome de usuário",
+                        filled: true,
+                        fillColor: Colors.grey[50],
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Informe o nome de usuário';
+                        }
+                        return null;
+                      },
+                    ),
+                  if (!isLogin) const SizedBox(height: 16),
                   TextFormField(
                     controller: email,
                     decoration: InputDecoration(
