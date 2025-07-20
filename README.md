@@ -109,7 +109,7 @@ class CarroWidget extends VeiculoWidget {
     ```
 2.  **Entre na pasta do projeto:**
     ```bash
-    cd seu-repositorio
+    cd FlutterAtividade4
     ```
 3.  **Instale as dependências:**
     ```bash
