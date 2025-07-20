@@ -124,4 +124,6 @@ class CarroWidget extends VeiculoWidget {
 
 Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato.
 
-**João Pedro** - [https://github.com/joaopedro-git](https://github.com/joaopedro-git)
+**João Pedro** - [https://github.com/JTeixeiraz](https://github.com/JTeixeiraz)
+
+**Lucas Diniz** - [https://github.com/LucasDinizS](https://github.com/LucasDinizS)
