@@ -9,6 +9,7 @@ import 'package:atvd42/firebase_options.dart';
 import 'package:provider/provider.dart';
 import 'package:atvd42/services/auth_services.dart';
 import 'package:atvd42/widgets/auth_check.dart';
+import 'package:atvd42/services/auth_services.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -111,6 +112,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              Text(""),
               const SizedBox(height: 8),
               const Text(
                 'Temos as melhores opções para você',

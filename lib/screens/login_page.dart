@@ -13,6 +13,7 @@ class _LoginPageState extends State<LoginPage> {
   final formKey = GlobalKey<FormState>();
   final email = TextEditingController();
   final senha = TextEditingController();
+  final nome = TextEditingController();
 
   bool isLogin = true;
   late String titulo;
@@ -51,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Registrar() async{
     try {
-      await context.read<AuthServices>().registrar(email.text, senha.text);
+      await context.read<AuthServices>().registrar(email.text, senha.text, nome.text);
     } on AuthException catch (e) {
       ScaffoldMessenger.of(context)
       .showSnackBar(SnackBar(content: Text(e.message)));
