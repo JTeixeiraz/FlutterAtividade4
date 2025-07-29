@@ -1,12 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'veiculo_widget.dart';
+import 'package:atvd42/enums/enums/tipo_Motos.dart'
 
 class MotoWidget extends VeiculoWidget {
   final double cilindradas;
-
+  final TipoMoto tipo;
   const MotoWidget({
     super.key,
+    required this.tipo,
     required this.cilindradas,
     required super.nome,
     required super.preco,
