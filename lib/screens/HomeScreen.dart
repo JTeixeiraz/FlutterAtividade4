@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:atvd42/screens/calculator_screen.dart';
 import 'package:atvd42/widgets/carro_widget.dart';
 import 'package:atvd42/widgets/moto_widget.dart';
-import 'package:atvd42/enums/enums/tipo_Motos.dart'
+import 'package:atvd42/enums/tipo_Motos.dart';
 
 class HomeScreen extends StatelessWidget {
 const HomeScreen({ Key? key }) : super(key: key);
@@ -267,7 +267,7 @@ const HomeScreen({ Key? key }) : super(key: key);
               CarouselSlider(
                 items: [
                   MotoWidget(
-                    tipo: TipoMoto.Street
+                    tipo: TipoMoto.Street,
                     cilindradas: 500,
                     nome: "Moto A",
                     preco: 15000,
@@ -280,7 +280,7 @@ const HomeScreen({ Key? key }) : super(key: key);
                           MaterialPageRoute(
                               builder: (context) => CalculatorScreen(
                                     veiculoSelecinado: MotoWidget(
-                                        tipo: TipoMoto.Street
+                                        tipo: TipoMoto.Street,
                                         cilindradas: 500,
                                         nome: "Moto A",
                                         preco: 15000,
@@ -297,7 +297,7 @@ const HomeScreen({ Key? key }) : super(key: key);
                     cilindradas: 600,
                     nome: "Moto B",
                     preco: 68000,
-                    tipo: TipoMoto.Trail
+                    tipo: TipoMoto.Trail,
                     desc: "Modelo esportivo.",
                     imagemURl:
                         "lib/images/moto2.jpg",
@@ -309,7 +309,7 @@ const HomeScreen({ Key? key }) : super(key: key);
                                     veiculoSelecinado: MotoWidget(
                                         cilindradas: 600,
                                         nome: "Moto B",
-                                        tipo: TipoMoto.Trail
+                                        tipo: TipoMoto.Trail,
                                         preco: 68000,
                                         desc: "Modelo esportivo.",
                                         imagemURl:
@@ -324,7 +324,7 @@ const HomeScreen({ Key? key }) : super(key: key);
                     cilindradas: 300,
                     nome: "Moto C",
                     preco: 25000,
-                    tipo: TipoMoto.Naked
+                    tipo: TipoMoto.Naked,
                     desc: "Modelo para iniciantes.",
                     imagemURl:
                         "lib/images/moto3.jpg",
@@ -336,7 +336,7 @@ const HomeScreen({ Key? key }) : super(key: key);
                                     veiculoSelecinado: MotoWidget(
                                         cilindradas: 300,
                                         nome: "Moto C",
-                                        tipo: TipoMoto.Naked
+                                        tipo: TipoMoto.Naked,
                                         preco: 25000,
                                         desc: "Modelo para iniciantes.",
                                         imagemURl:
