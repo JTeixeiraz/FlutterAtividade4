@@ -44,6 +44,7 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyA8_RIo3N8GDoBBufmZFqq0EWaZPFzZzmw',
     appId: '1:860802954200:web:95f33ee4e7ec97992638ad',
     messagingSenderId: '860802954200',
+    databaseURL: 'https://flutteratividade4-default-rtdb.firebaseio.com/',
     projectId: 'flutteratividade4',
     authDomain: 'flutteratividade4.firebaseapp.com',
     storageBucket: 'flutteratividade4.firebasestorage.app',

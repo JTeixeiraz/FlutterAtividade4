@@ -1,10 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:atvd42/widgets/caminhao_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:atvd42/screens/calculator_screen.dart';
 import 'package:atvd42/widgets/carro_widget.dart';
 import 'package:atvd42/widgets/moto_widget.dart';
 import 'package:atvd42/enums/tipo_Motos.dart';
+
+final firebaseApp = Firebase.app();
+final rtdb = FirebaseDatabase.instanceFor(app: firebaseApp, databaseURL: 'https://flutteratividade4-default-rtdb.firebaseio.com/');
+DatabaseReference carrosRef = FirebaseDatabase.instance.ref("carros/");
 
 class HomeScreen extends StatelessWidget {
 const HomeScreen({ Key? key }) : super(key: key);

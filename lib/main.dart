@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:atvd42/firebase_options.dart';
 import 'package:provider/provider.dart';
 import 'package:atvd42/services/auth_services.dart';
@@ -7,11 +8,24 @@ import 'package:atvd42/widgets/auth_check.dart';
 import 'package:atvd42/screens/HomeScreen.dart';
 import 'package:atvd42/screens/profile_screen.dart';
 
+final firebaseApp = Firebase.app();
+final rtdb = FirebaseDatabase.instanceFor(app: firebaseApp, databaseURL: 'https://flutteratividade4-default-rtdb.firebaseio.com/');
+DatabaseReference carrosRef = FirebaseDatabase.instance.ref("carros/");
+//         await carrosRef.set({
+//     "numAssentos": 2,
+//     "numPortas": 2,
+//     "cavalos": 200,
+//     "nome": "Carro C",
+//     "preco": 120000,
+//     "desc": "Modelo Família.",
+// });
 void main() async{
+
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform
+    await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
   );
+
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (context)=> AuthServices())
