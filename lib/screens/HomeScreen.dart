@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:atvd42/widgets/caminhao_widget.dart';
@@ -10,11 +11,32 @@ import 'package:atvd42/enums/tipo_Motos.dart';
 
 final firebaseApp = Firebase.app();
 final rtdb = FirebaseDatabase.instanceFor(app: firebaseApp, databaseURL: 'https://flutteratividade4-default-rtdb.firebaseio.com/');
-DatabaseReference carrosRef = FirebaseDatabase.instance.ref("carros/");
+DatabaseReference bdRef = FirebaseDatabase.instance.ref("carros/");
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+
 const HomeScreen({ Key? key }) : super(key: key);
 
+ 
+  @override
+  _HomeScreenState createState() => _HomeScreenState(); 
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  var snapshot;
+
+
+  @override
+  void initState() {
+    super.initState();
+     snapshot = bdRef.child("1/").get();
+     if (snapshot.exists) {
+    print(snapshot.value);
+} else {
+    print('No data available.');
+}
+  }
+  
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -373,5 +395,5 @@ const HomeScreen({ Key? key }) : super(key: key);
       ],
     ),
   );
-}
-}
+  }
+} 
